@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCB</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h1>Online Code Book</h1>
+        <h6 class="mb-4">Made by Adrian Fadhali Wiratama // 312110329</h6>
+
+        <form action="/encrypt" method="post">
+          <div class="mb-3">
+            <label for="plaintext_hex" class="form-label"
+              >Plaintext (Hex):</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="plaintext_hex"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="key_binary" class="form-label">Key (Binary):</label>
+            <input
+              type="text"
+              class="form-control"
+              name="key_binary"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        {% if ciphertext_hex %}
+        <h2 class="mt-4">Hasil (Hex):</h2>
+        <p class="alert alert-success">{{ ciphertext_hex }}</p>
+        {% endif %}
+      </div>
+    </div>
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
